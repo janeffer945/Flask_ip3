@@ -26,3 +26,32 @@ def create_app(config_name):
     login_manager.init_app(app)
     bootstrap.init_app(app)
     mail.init_app(app)
+
+     # configure UploadSet
+    configure_uploads(app,photos)
+
+
+  
+    # ENV = 'dev'
+
+    # if ENV == 'dev':
+    #   app.debug = True
+    #   app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost:5433/flaskqna'
+
+    # else:
+    #   app.debug = False
+    #   app.config['SQLALCHEMY_DATABASE_URI'] = ''
+
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+     
+    # Registering the blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    # Registering  auth brueprint
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint,url_prefix ='/authenticate')
+
+   
+
+    
