@@ -36,12 +36,12 @@
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
           <a class="navbar-brand" href="#">PITH-WEB</a>
   
-          <!-- <img
+          <img
               src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
               height="15"
               alt="MDB Logo"
               loading="lazy"
-            /> -->
+            />
         </a>
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -59,7 +59,7 @@
             </li> -->
           {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a>
+            <!-- <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a> -->
           </li>
           {% endif %}
         </ul>
@@ -132,14 +132,15 @@
       <div>
         <ul class="nav navbar-nav navbar-right">
           {% if current_user.is_authenticated %}
-          <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-    
+          <!-- <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+     -->
           <li style="color:white;padding:15px;">{{current_user.username}}</li>
           <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
           {% else %}
           <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
           {%endif%}
         </ul>
+        
       </div>
      
       <!-- Right elements -->

@@ -5,6 +5,9 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from . import login_manager
 from datetime import datetime
 from flask_login import UserMixin,current_user
+from flask_login import UserMixin
+# from werkzeug.utils import secure_filename
+# from werkzeug.utils import secure_filenamegenerate_password_hash,check_password_hash
 
 
 class User(UserMixin,db.Model):

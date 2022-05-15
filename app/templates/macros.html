@@ -12,7 +12,7 @@
                     <p>{{category.post}}</p>
                     <p class="text-center"> Category: {{category.category}}</p>
                     <footer class="blockquote-footer text-center"> Posted by: {{category.user.username}}</footer>
-                    <div>
+                    link href         <div>
                         <span class="foot">{{category.comment.count()}} Comments</span>
                         <a href="{{url_for('main.upvote',pitch_id = category.id)}}"><i
                                 class="fas fa-heart"></i>Upvote<span>{{category.upvote.count()}}</span></a>

@@ -1,10 +1,13 @@
 from . import main
 from flask import render_template,request,redirect,url_for,abort
+# from flask import render_template,request,redirect,url_for,abort
+from ..models import User
 from ..models import  User
 from .forms import UpdateProfile
 from .. import db,photos
 from flask_login import login_required,current_user
 from ..models import Pitch, User, Comment, Upvote, Downvote
+# from werkzeug.utils import secure_filename
 
 from .forms import UpdateProfile,PitchForm,CommentForm,UpvoteForm
 # from .forms import UpdateProfile,PitchForm,CommentForm
@@ -26,6 +29,7 @@ def profile(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
+
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
 def update_profile(uname):
@@ -55,7 +59,7 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
-   
+
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required
