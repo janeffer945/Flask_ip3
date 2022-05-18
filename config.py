@@ -26,7 +26,7 @@ class Config:
 class TestConfig(Config):
 
 
-   # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Mbuguack@localhost/watchlist_test'
+   # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://janeffer:Jenny#localhost/watchlist_test'
    pass
 
 
@@ -38,7 +38,7 @@ class ProdConfig(Config):
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-   # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Mbuguack@localhost/watchlist'
+   # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Jenny@localhost/watchlist'
    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
@@ -50,7 +50,7 @@ class DevConfig(Config):
    Args:
        Config: The parent configuration class with General configuration settings
    '''
-   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Mbuguack@localhost/pitches'
+   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Jenny@localhost/pitches'
    DEBUG = True
 
 
